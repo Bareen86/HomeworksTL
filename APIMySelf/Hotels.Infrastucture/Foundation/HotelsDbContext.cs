@@ -2,6 +2,7 @@
 using Hotels.Infrastructure.Data.Rooms;
 using Hotels.Infrastructure.Data.Workers;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Hotels.Infrastucture.Foundation
 {
@@ -14,9 +15,7 @@ namespace Hotels.Infrastucture.Foundation
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(HotelsConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(RoomsConfiguration).Assembly);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(WorkersConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

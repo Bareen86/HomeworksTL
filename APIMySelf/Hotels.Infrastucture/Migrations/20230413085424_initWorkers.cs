@@ -5,7 +5,7 @@
 namespace Hotels.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initWorkers : Migration
+    public partial class InitWorkers : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

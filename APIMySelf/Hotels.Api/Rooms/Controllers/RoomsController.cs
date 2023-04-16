@@ -69,10 +69,7 @@ namespace Hotels.Api.Rooms.Controllers
         [HttpPut("Hotels/{hotelid}/Rooms/{roomid}")]
         public IActionResult Update([FromRoute] int hotelid, [FromRoute] int roomid, UpdateRoomCommandDto command)
         {
-            Room room = _roomRepository.GetAllRooms().Single(r => r.Id == roomid && r.HotelId == hotelid);
-            room.RoomType = command.RoomType;
-            room.Capacity = command.Capacity;
-            _roomEditor.Update(room);
+            _roomEditor.Update(command.Map(roomid));
             _unitOfWork.Commit();
             return Ok();
         }

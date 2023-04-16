@@ -4,7 +4,8 @@ namespace Hotels.Application.RoomsUpdatinng
 {
     public interface IRoomsEditor
     {
-        void Update(Room room);
+        void Update(UpdateRoomCommand command);
+        
     }
     public class RoomsEditor : IRoomsEditor
     {
@@ -14,9 +15,15 @@ namespace Hotels.Application.RoomsUpdatinng
         {
             _roomRepository = roomRepository;
         }
-        public void Update(Room room)
+        public void Update(UpdateRoomCommand command)
         {
-            _roomRepository.UpdateRoom(room);
+            Room room = _roomRepository.GetRoomById(command.roomId);
+            UpdateFiels(room, command);
+        }
+        private void UpdateFiels(Room room, UpdateRoomCommand command)
+        {
+            room.RoomType = command.RoomType;
+            room.Capacity = command.Capacity;
         }
     }
 }

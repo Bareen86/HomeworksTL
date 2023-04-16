@@ -12,7 +12,7 @@ namespace Hotels.Infrastructure.Migrations
 {
     [DbContext(typeof(HotelsDbContext))]
     [Migration("20230413085424_initWorkers")]
-    partial class initWorkers
+    partial class InitWorkers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
