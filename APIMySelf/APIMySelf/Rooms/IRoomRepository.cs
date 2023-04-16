@@ -11,8 +11,6 @@ namespace Hotels.Domain.Hotels
         public List<Room> GetAllRooms();
         public void AddRoom(Room room);
 
-        public void UpdateRoom(Room room);
-
         public void DeleteRoom(Room room);
 
         public Room GetRoomById(int id);

@@ -37,12 +37,5 @@ namespace Hotels.Infrastructure.Data.Rooms
         {
             return _rooms.Where(r => r.Id == id).FirstOrDefault();
         }
-
-        public void UpdateRoom(Room room)
-        {
-            var searchedRoom = GetRoomById(room.Id);
-            searchedRoom.UpdateRoomType(room.RoomType);
-            searchedRoom.UpdateCapacity(room.Capacity);
-        }
     }
 }
