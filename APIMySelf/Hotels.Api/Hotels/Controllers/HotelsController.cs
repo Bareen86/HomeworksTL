@@ -44,6 +44,10 @@ namespace Hotels.Api.Hotels.Controllers
         public IActionResult GetHotelById([FromRoute] int hotelid)
         {
             var result = _hotelRepository.GetById(hotelid);
+            if (result == null)
+            {
+                return NotFound();
+            }
             var map = result.Map();
             return Ok(map);
         }

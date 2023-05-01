@@ -27,7 +27,7 @@ namespace Hotels.Api.Workers.Controllers
         {
             _workerRepository = workerRepository;
             _workerCreator = workerCreator;
-            _workerEditor = workerEditor;
+            _workerEditor = workerEditor;   
             _unitOfWork = unitOfWork;
         }
 
